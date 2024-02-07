@@ -30,5 +30,15 @@ const book=[
     },
     {
         title:'book two',genre:'fantasy',publish:2010,edition:2018
-    }
+    },
+    { title: 'book three',genre:'fictional',
+    publish:2016,edition:2019}
+      
 ]
+
+// userbooks=book.filter((bk)=>bk.genre==='science')
+
+const userbooks=book.filter((bk)=>{
+    return bk.publish>=2000 && bk.genre==="science" 
+})
+console.log(userbooks);
