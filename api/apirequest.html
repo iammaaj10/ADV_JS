@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: grey;">
+    <p>learning the api</p>
+    <button id="followers">Click me</button>
+    <div id="count"></div>
+    
+    
+</body>
+<script>
+    document.getElementById('followers').addEventListener('click',()=>{
+        const requesturl='https://api.github.com/users/iammaaj10'
+ const xhr= new XMLHttpRequest();
+ xhr.open('GET',requesturl)
+ xhr.onreadystatechange=function(){
+    //console.log(xhr.readyState);
+    if(xhr.readyState === 4){
+        const data= JSON.parse(this.responseText)
+        const followers=data.followers
+        
+        document.getElementById('count').innerText='Followers '+`${followers}`;
+    }
+ }
+ 
+ xhr.send();
+
+    })
+    
+ 
+</script>
+</html>
