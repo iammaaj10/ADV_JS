@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+   <button id="orange">Orange</button> 
+   <button id="green">Green</button> 
+</body>
+<script>
+    // function init(){
+    //     let username= "maaj";
+
+    //     function inner(){
+    //         console.log(username);
+    //     }
+    //     inner()
+    // }
+    // init()
+    // console.log("Too outter",username); //undefined
+
+// closure
+
+// function makefunc(){
+//     const name="Brave"
+//     function displayname(){
+//         console.log(name);
+
+//     }
+//     return displayname
+// }
+
+// const myfunc=makefunc();
+// myfunc()
+
+//  document.getElementById("orange").onclick=function(){
+//     document.body.style.backgroundColor="orange"
+//  }
+//  document.getElementById("green").onclick=function(){
+//     document.body.style.backgroundColor="green"
+//  }
+
+ function clickhandler(color){
+    //document.body.style.backgroundColor=`${color}`;
+
+    return function(){
+        document.body.style.backgroundColor=`${color}`
+    }
+ }
+
+ document.getElementById('orange').onclick=clickhandler("orange")
+ document.getElementById('green').onclick=clickhandler("green")
+    </script>
+
+</html>
