@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async/Await Example</title>
+</head>
+<body>
+    <button id="fetchData">Fetch Data</button>
+    <div id="result"></div>
+    
+    <script>
+        
+        document.getElementById('fetchData').addEventListener('click', async () => {
+    try {
+        const response = await fetchData("https://api.github.com/users/iammaaj10");
+       // document.getElementById('result').innerText = JSON.stringify(response,null,2);
+        const followers = response.followers
+        document.getElementById('result').innerText = JSON.parse(followers,null,2);
+    } catch (error) {
+        document.getElementById('result').innerText = error;
+    }
+});
+async function fetchData(url) {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            return data;
+        }
+
+   
+
+
+
+    </script>
+</body>
+</html>
