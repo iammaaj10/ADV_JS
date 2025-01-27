@@ -1,13 +1,13 @@
 
 
-// const promise1=new Promise(function(resolve,reject){
-//     //Do an async task
-//     // DB calls, cryptography, network
-//     setTimeout(function(){
-//         console.log('Async task is complete');
-//         resolve()
-//     },1000)
-// })
+const promise1=new Promise(function(resolve,reject){
+    //Do an async task
+    // DB calls, cryptography, network
+    setTimeout(function(){
+        console.log('Async task is complete');
+        resolve()
+    },1000)
+})
 
 // promise1.then(function(){
 //     console.log("Promise consumed");
